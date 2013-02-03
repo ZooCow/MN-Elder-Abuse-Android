@@ -116,12 +116,14 @@ public class MainActivity extends SherlockFragmentActivity implements TabListene
 	public void transactFromInside(String urlString){
 		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		WebRenderFragment webFragment = new WebRenderFragment();
-		
+		Log.i("Transact From Inside", "Transacting " + urlString);
         Bundle args = new Bundle();
         args.putString("URL", urlString);
         webFragment.setArguments(args);
-		
-		fragmentTransaction.replace(R.id.fragment_container, webFragment);
+	
+        fragmentTransaction.replace(R.id.fragment_container, webFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
 		
 	}
 	
