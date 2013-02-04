@@ -49,7 +49,7 @@ public class AbuseSignsFragment extends ListFragment implements OnClickListener 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 
-		Log.i("AbuseSignsFragment", "Clicken on Position " + position);
+		Log.i("AbuseSignsFragment", "Clicked on position " + position);
 
 		String url = "about:blank";
 

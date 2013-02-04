@@ -1,8 +1,10 @@
 package com.application.mnelderdependentabuse;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -37,17 +39,36 @@ public class AgenciesFragment extends ListFragment implements OnClickListener {
         listView.setAdapter(adapter); 
 
         
-        
+       
         return view;
         
     }
 
     
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-       // Toast.makeText(l.getContext(), position, Toast.LENGTH_SHORT).show();
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
 
-    }
+		Log.i("Agencies Fragment", "Clicked on position " + position);
+
+		String url = "about:blank";
+
+		switch (position) {
+			case 0: url = "about:blank"; break;
+			case 1: url = "about:blank"; break; 
+			case 2: url = "about:blank";  break;
+			case 3: url = "about:blank";  break;
+			case 4: url = "about:blank";  break;
+			case 5: url = "about:blank";  break;
+			case 6: url = "about:blank";  break;
+			case 7: url = "about:blnak";  break;
+			case 8: url = "about:blank";  break;
+			default: url = "about:blank";  break;
+		}
+
+		Activity activity = getActivity();
+		((MainActivity) activity).transactFromInside(url);
+
+	}
     
 	@Override
 	public void onClick(View v) {
