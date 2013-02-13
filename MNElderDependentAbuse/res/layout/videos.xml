@@ -5,15 +5,17 @@
     android:layout_height="match_parent"
     android:id="@+id/first_fragment_root">
 
-    <TextView android:layout_height="wrap_content"
+    <TextView 
+        android:id="@+id/textViewVideos"
+        android:layout_height="wrap_content"
         android:text="Videos"
         android:layout_width="match_parent"
         android:gravity="center_horizontal" />
-    
-    <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
-    	android:id="@+id/webview"
-    	android:layout_width="fill_parent"
-    	android:layout_height="fill_parent"/>
 
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
 </LinearLayout>
